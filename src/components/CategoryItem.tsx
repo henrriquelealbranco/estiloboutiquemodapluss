@@ -24,7 +24,7 @@ export const CategoryItem: React.FC<CategoryItemProps> = ({
       {/* Imagem de Fundo */}
       <div className="relative w-full h-full overflow-hidden bg-gray-100">
         <img
-          src={image || 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80'}
+          src={image || '/images/sections/cat_vestidos.jpg'}
           alt={name}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
         />

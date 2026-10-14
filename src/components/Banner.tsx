@@ -68,14 +68,14 @@ export const Banner: React.FC = () => {
         <div className="lg:col-span-5 relative flex justify-center">
           <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20">
             <img
-              src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=900&q=80"
-              alt="Estilo Boutique Plus Size Vestido"
-              className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700"
+              src="/images/sections/hero_banner_model.jpg"
+              alt="Estilo Boutique Moda Plus Size"
+              className="w-full h-full object-cover object-top transform hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
-              <div className="bg-white/90 backdrop-blur-md text-[#8B1A4A] p-4 rounded-2xl w-full text-center shadow-lg">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6">
+              <div className="bg-white/95 backdrop-blur-md text-[#8B1A4A] p-4 rounded-2xl w-full text-center shadow-lg border border-white/40">
                 <p className="font-heading font-bold text-lg">Nova Coleção Plus Size</p>
-                <p className="text-xs text-gray-700">Vestidos, Calças, Blusas e Conjuntos</p>
+                <p className="text-xs text-gray-700">Vestidos, Calças, Blusas e Conjuntos até o 56</p>
               </div>
             </div>
           </div>

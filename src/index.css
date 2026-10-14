@@ -25,12 +25,12 @@ h1, h2, h3, .font-heading {
 
 .hero-banner {
   background: linear-gradient(135deg, rgba(139, 26, 74, 0.92) 0%, rgba(74, 10, 38, 0.95) 100%),
-              url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat;
+              url('/images/sections/hero_banner_model.jpg') center/cover no-repeat;
 }
 
 .shop-banner {
   background: linear-gradient(135deg, rgba(139, 26, 74, 0.88) 0%, rgba(168, 48, 96, 0.85) 100%),
-              url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1600&q=80') center/cover no-repeat;
+              url('/images/sections/about_boutique_model.jpg') center/cover no-repeat;
 }
 
 /* Sidebar animation classes */

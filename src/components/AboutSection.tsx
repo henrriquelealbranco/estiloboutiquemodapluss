@@ -99,14 +99,14 @@ export const AboutSection: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] border border-gray-100">
               <img
-                src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&q=80"
-                alt="Moda Feminina Estilo Boutique"
-                className="w-full h-full object-cover object-center"
+                src="/images/sections/about_boutique_model.jpg"
+                alt="Moda Plus Size Estilo Boutique"
+                className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#8B1A4A]/80 via-transparent to-transparent flex items-end p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#8B1A4A]/85 via-transparent to-transparent flex items-end p-6">
                 <div className="text-white">
                   <p className="font-heading font-bold text-xl">Estilo Boutique</p>
-                  <p className="text-xs text-pink-100">Guarapuava • Paraná</p>
+                  <p className="text-xs text-pink-100">Moda Plus Size até o 56 • Guarapuava/PR</p>
                 </div>
               </div>
             </div>

@@ -4,23 +4,23 @@ import { FaInstagram } from 'react-icons/fa6';
 const instagramPosts = [
   {
     id: 1,
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80',
-    caption: 'Vestidos fluidos que valorizam o corpo com sofisticação ✨',
+    image: '/images/sections/ig_post_1.jpg',
+    caption: 'Vestidos de festa e gala exclusivos para momentos inesquecíveis ✨',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80',
-    caption: 'Conjuntos de alfaiataria em tons suaves para brilhar 💖',
+    image: '/images/sections/ig_post_2.jpg',
+    caption: 'Camisa branca clássica e caimento impecável na nossa loja em Guarapuava 💖',
   },
   {
     id: 3,
-    image: 'https://images.unsplash.com/photo-1566479153369-5c7ce9ca7f3b?w=600&q=80',
-    caption: 'Manga bufante e caimento leve em cada detalhe 🌸',
+    image: '/images/sections/ig_post_3.jpg',
+    caption: 'Túnicas e vestidos fluidos para valorizar suas curvas com liberdade 🌸',
   },
   {
     id: 4,
-    image: 'https://images.unsplash.com/photo-1611558709798-a48e0ece5a7b?w=600&q=80',
-    caption: 'Pantalonas de cós anatômico pensadas até o tamanho 56 👖',
+    image: '/images/sections/ig_post_4.jpg',
+    caption: 'Moda feminina e plus size feita com amor para vestir do P ao 56 👗',
   },
 ];
 

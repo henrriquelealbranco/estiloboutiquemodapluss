@@ -11,21 +11,29 @@ export const Logo: React.FC<LogoProps> = ({ variant = 'dark', size = 'md' }) => 
 
   return (
     <Link to="/" className="flex items-center gap-3 group text-left">
-      {/* Círculo do Logo com EB */}
+      {/* Círculo do Logo com EB oficial */}
       <div
-        className={`rounded-full flex items-center justify-center font-heading font-bold transition-transform duration-300 group-hover:scale-105 shadow-sm ${
+        className={`rounded-full overflow-hidden flex items-center justify-center font-heading font-bold transition-transform duration-300 group-hover:scale-105 shadow-sm shrink-0 ${
           isLight
             ? 'bg-white text-[#8B1A4A] border-2 border-white'
-            : 'bg-[#8B1A4A] text-white border-2 border-[#8B1A4A]'
+            : 'bg-white text-[#8B1A4A] border-2 border-[#8B1A4A]'
         } ${
           size === 'sm'
-            ? 'w-9 h-9 text-base'
+            ? 'w-10 h-10 text-base'
             : size === 'lg'
             ? 'w-14 h-14 text-2xl'
-            : 'w-11 h-11 text-lg'
+            : 'w-12 h-12 text-lg'
         }`}
       >
-        EB
+        <img
+          src="/images/boutique/logo_eb.png"
+          alt="Estilo Boutique Logo"
+          className="w-full h-full object-cover rounded-full"
+          onError={(e) => {
+            // Fallback to text initials if image fails
+            e.currentTarget.style.display = 'none';
+          }}
+        />
       </div>
 
       <div className="flex flex-col">

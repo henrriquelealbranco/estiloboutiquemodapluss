@@ -16,7 +16,7 @@ export interface Category {
   name: string;
   icon: string;
   description?: string;
-  image?: string;
+  image: string;
 }
 
 export const categories: Category[] = [
@@ -25,44 +25,44 @@ export const categories: Category[] = [
     name: 'Vestidos', 
     icon: '👗',
     description: 'Modelos fluidos, elegantes e pensados para valorizar suas curvas em todas as ocasiões.',
-    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80'
+    image: '/images/sections/cat_vestidos.jpg'
   },
   { 
     id: 'blusas', 
     name: 'Blusas', 
     icon: '👚',
     description: 'Blusas, camisas e croppeds com caimento leve, tecidos nobres e acabamentos delicados.',
-    image: 'https://images.unsplash.com/photo-1566479153369-5c7ce9ca7f3b?w=800&q=80'
+    image: '/images/sections/cat_blusas.jpg'
   },
   { 
     id: 'calcas', 
     name: 'Calças', 
     icon: '👖',
     description: 'Calças em alfaiataria, jeans com elastano e pantalonas confortáveis até o tamanho 56.',
-    image: 'https://images.unsplash.com/photo-1611558709798-a48e0ece5a7b?w=800&q=80'
+    image: '/images/sections/cat_calcas.jpg'
   },
   { 
     id: 'conjuntos', 
     name: 'Conjuntos', 
     icon: '✨',
     description: 'Conjuntos modernos, versáteis e práticos para compor produções sofisticadas.',
-    image: 'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80'
+    image: '/images/sections/cat_conjuntos.jpg'
   },
 ];
 
 export const products: Product[] = [
   {
     id: 1,
-    name: 'Vestido Floral Midi Curvas Elegance',
+    name: 'Vestido Midi Curvas Elegance',
     category: 'vestidos',
     price: 189.90,
     colors: ['Rosa Floral', 'Azul Marinho', 'Preto'],
     sizes: ['44', '46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80',
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&q=80'
+      '/images/catalog/prod_1_1.jpg',
+      '/images/catalog/prod_1_2.jpg'
     ],
-    description: 'Vestido midi floral com caimento suave que valoriza as curvas. Tecido leve e confortável, decote em V sutil e manga delicada. Perfeito para o dia a dia ou ocasiões especiais em Guarapuava.',
+    description: 'Vestido midi em tecido premium com caimento suave que abraça e valoriza as curvas. Decote elegante e modelagem fluida pensada para extremo conforto e sofisticação até o tamanho 56.',
     featured: true,
     isDemo: true
   },
@@ -74,25 +74,25 @@ export const products: Product[] = [
     colors: ['Verde Oliva', 'Terracota', 'Preto'],
     sizes: ['46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&q=80',
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80'
+      '/images/catalog/prod_2_1.jpg',
+      '/images/catalog/prod_2_2.jpg'
     ],
-    description: 'Chemise clássico com abotoamento frontal e faixa na cintura para ajuste personalizado. Caimento impecável que une sofisticação e conforto.',
+    description: 'Chemise clássico com abotoamento frontal e faixa ajustável na cintura. Caimento impecável sem repuxar no busto, unindo versatilidade para o dia a dia e elegância para ocasiões especiais.',
     featured: true,
     isDemo: true
   },
   {
     id: 3,
-    name: 'Vestido Longo Estampa Tropical Vibrante',
+    name: 'Vestido Longo Gala Estampa Exclusiva',
     category: 'vestidos',
     price: 249.90,
-    colors: ['Estampa Tropical', 'Fundo Marsala'],
-    sizes: ['44', '46', '48', '50', '52', '54'],
+    colors: ['Estampa Dourada', 'Preto & Branco', 'Marsala'],
+    sizes: ['44', '46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1502716119720-816cb7be39c9?w=800&q=80',
-      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80'
+      '/images/catalog/prod_3_1.jpg',
+      '/images/catalog/prod_3_2.jpg'
     ],
-    description: 'Vestido longo em viscose premium com fendas laterais discretas. Estampa exclusiva, caimento soltinho e frescor para dias ensolarados.',
+    description: 'Vestido longo de festa com corte que alonga a silhueta e acabamento de alto padrão. Inspirado nos looks de destaque da boutique para celebrações marcantes.',
     featured: false,
     isDemo: true
   },
@@ -102,12 +102,12 @@ export const products: Product[] = [
     category: 'blusas',
     price: 119.90,
     colors: ['Off White', 'Bordô', 'Lavanda'],
-    sizes: ['P', 'M', 'G', 'GG', 'G1', 'G2', 'G3'],
+    sizes: ['G', 'GG', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1566479153369-5c7ce9ca7f3b?w=800&q=80',
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80'
+      '/images/catalog/prod_4_1.jpg',
+      '/images/catalog/prod_4_2.jpg'
     ],
-    description: 'Blusa em malha canelada de toque macio com mangas levemente bufantes em tecido estruturado. Conforto e elegância para composições versáteis.',
+    description: 'Blusa em malha encorpada de toque super macio com mangas levemente bufantes estruturadas. Modelagem pensada para liberdade de movimento e elegância.',
     featured: true,
     isDemo: true
   },
@@ -119,25 +119,25 @@ export const products: Product[] = [
     colors: ['Branco Neve', 'Vinho Estilo', 'Nude'],
     sizes: ['46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80',
-      'https://images.unsplash.com/photo-1566479153369-5c7ce9ca7f3b?w=800&q=80'
+      '/images/catalog/prod_5_1.jpg',
+      '/images/catalog/prod_5_2.jpg'
     ],
-    description: 'Camisa em viscose sarjada com caimento encorpado e modelagem pensada para o biotipo plus size, sem repuxar no busto.',
+    description: 'Camisa em viscose sarjada premium com caimento encorpado. Modelagem anatômica com fechamento sem abertura indesejada entre os botões.',
     featured: false,
     isDemo: true
   },
   {
     id: 6,
-    name: 'Blusa Túnica Gola Padre Soltinha',
+    name: 'Túnica Degradê Elegance Soltinha',
     category: 'blusas',
     price: 139.90,
-    colors: ['Azul Celeste', 'Bordô', 'Preto'],
+    colors: ['Azul Degradê', 'Terracota', 'Preto'],
     sizes: ['44', '46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1525450824786-227cbef70703?w=800&q=80',
-      'https://images.unsplash.com/photo-1566479153369-5c7ce9ca7f3b?w=800&q=80'
+      '/images/catalog/prod_6_1.jpg',
+      '/images/catalog/prod_6_2.jpg'
     ],
-    description: 'Túnica com fendas laterais e decote padre em V. Comprimento ideal que alonga a silhueta com extrema leveza e conforto.',
+    description: 'Túnica fluida com caimento assimétrico leve que valoriza a silhueta com frescor. Um dos looks de maior sucesso na vitrine da Estilo Boutique.',
     featured: false,
     isDemo: true
   },
@@ -149,10 +149,10 @@ export const products: Product[] = [
     colors: ['Preto Clássico', 'Areia', 'Bordô'],
     sizes: ['44', '46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1611558709798-a48e0ece5a7b?w=800&q=80',
-      'https://images.unsplash.com/photo-1529139574466-a303027bc851?w=800&q=80'
+      '/images/catalog/prod_7_1.jpg',
+      '/images/catalog/prod_7_2.jpg'
     ],
-    description: 'Calça pantalona com elástico anatômico traseiro no cós para ajuste perfeito sem apertar. Pregas frontais elegantes e bolsos laterais funcionais.',
+    description: 'Calça pantalona com elástico anatômico na parte posterior do cós para ajuste perfeito sem apertar. Pregas frontais elegantes e bolsos laterais funcionais.',
     featured: true,
     isDemo: true
   },
@@ -161,73 +161,73 @@ export const products: Product[] = [
     name: 'Calça Jeans Plus Confort com Elastano',
     category: 'calcas',
     price: 229.90,
-    colors: ['Jeans Médio', 'Jeans Escuro', 'Black Jeans'],
+    colors: ['Black Jeans', 'Jeans Médio', 'Jeans Escuro'],
     sizes: ['46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1529139574466-a303027bc851?w=800&q=80',
-      'https://images.unsplash.com/photo-1611558709798-a48e0ece5a7b?w=800&q=80'
+      '/images/catalog/prod_8_1.jpg',
+      '/images/catalog/prod_8_2.jpg'
     ],
-    description: 'Jeans com alto teor de elastano e modelagem levanta-bumbum com cós anatômico largo. Conforto total para o dia todo com caimento impecável.',
+    description: 'Jeans com alta elasticidade e tecnologia levanta-bumbum anatômica. Cós largo estruturado que não desce ao sentar e proporciona conforto absoluto durante todo o dia.',
     featured: false,
     isDemo: true
   },
   {
     id: 9,
-    name: 'Calça Jogger Crepe Chic com Cordão',
+    name: 'Calça Alfaiataria Casual Chic com Cordão',
     category: 'calcas',
     price: 179.90,
     colors: ['Verde Militar', 'Preto', 'Caramelo'],
     sizes: ['44', '46', '48', '50', '52', '54'],
     images: [
-      'https://images.unsplash.com/photo-1485518882989-dc1bc5d8f7c0?w=800&q=80',
-      'https://images.unsplash.com/photo-1611558709798-a48e0ece5a7b?w=800&q=80'
+      '/images/catalog/prod_9_1.jpg',
+      '/images/catalog/prod_9_2.jpg'
     ],
-    description: 'Calça jogger em crepe estruturado com punho suave no tornozelo e amarração na cintura. O match perfeito entre estilo casual e sofisticado.',
+    description: 'Calça em tecido maleável estruturado com cós elástico e cordão de ajuste delicado. O equilíbrio perfeito entre casualidade e elegância.',
     featured: false,
     isDemo: true
   },
   {
     id: 10,
-    name: 'Conjunto Alfaiataria Cropped e Pantalona',
+    name: 'Conjunto Alfaiataria Colete e Pantalona',
     category: 'conjuntos',
     price: 289.90,
-    colors: ['Rosa Quartz', 'Bordô Estilo', 'Verde Oliva'],
+    colors: ['Azul Noite', 'Bordô Estilo', 'Verde Oliva'],
     sizes: ['46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80',
-      'https://images.unsplash.com/photo-1550639524-a0a96c6a0d82?w=800&q=80'
+      '/images/catalog/prod_10_1.jpg',
+      '/images/catalog/prod_10_2.jpg'
     ],
-    description: 'Conjunto completo composto por blazerzinho cropped e pantalona de cintura alta. Tecido alfaiataria premium com toque aveludado e visual poderoso.',
+    description: 'Conjunto completo composto por peça superior estruturada e pantalona de cintura alta. Tecido encorpado que confere presença, autoridade e elegância.',
     featured: true,
     isDemo: true
   },
   {
     id: 11,
-    name: 'Conjunto Casual Canelado Blusa e Calça',
+    name: 'Conjunto Casual Confort Blusa e Calça',
     category: 'conjuntos',
     price: 239.90,
     colors: ['Cinza Mescla', 'Preto', 'Vinho'],
     sizes: ['44', '46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1550639524-a0a96c6a0d82?w=800&q=80',
-      'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=800&q=80'
+      '/images/catalog/prod_11_1.jpg',
+      '/images/catalog/prod_11_2.jpg'
     ],
-    description: 'Conjunto loungewear chic em malha canelada encorpada. Super quentinho e aconchegante, ideal para passeios e trabalho em dias amenos.',
+    description: 'Conjunto loungewear chic em malha encorpada e macia. Extremamente confortável para trabalho ou viagens, mantendo o visual impecável.',
     featured: false,
     isDemo: true
   },
   {
     id: 12,
-    name: 'Look Elegance Blusa Seda e Saia Midi',
+    name: 'Look Elegance Vestido Midi Festa Curvas',
     category: 'conjuntos',
     price: 279.90,
-    colors: ['Terracota & Areia', 'Preto & Fúcsia'],
+    colors: ['Fúcsia Vibrante', 'Preto Clássico', 'Terracota'],
     sizes: ['46', '48', '50', '52', '54', '56'],
     images: [
-      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80',
-      'https://images.unsplash.com/photo-1529139574466-a303027bc851?w=800&q=80'
+      '/images/catalog/prod_12_1.jpg',
+      '/images/catalog/prod_12_2.jpg'
     ],
-    description: 'Composição de look completo com blusa fluida acetinada e saia midi evasê com cós elástico anatômico. Sofisticação imediata para eventos e celebrações.',
+    description: 'Composição de look requintado com caimento que valoriza a silhueta plus size com glamour e personalidade para eventos.',
     featured: true,
     isDemo: true
   }
