@@ -4,20 +4,11 @@ import {
   Checkout,
   HomeLayout,
   Landing,
-  Login,
-  OrderConfirmation,
-  OrderHistory,
-  Register,
-  Search,
-  Shop,
-  SingleOrderHistory,
-  SingleProduct,
-  UserProfile,
+  Catalog,
+  ProductDetail,
+  Wishlist,
+  NotFound,
 } from "./pages";
-import { checkoutAction, searchAction } from "./actions/index";
-import { shopCategoryLoader } from "./pages/Shop";
-import { loader as orderHistoryLoader } from "./pages/OrderHistory";
-import { loader as singleOrderLoader } from "./pages/SingleOrderHistory";
 
 const router = createBrowserRouter([
   {
@@ -29,57 +20,44 @@ const router = createBrowserRouter([
         element: <Landing />,
       },
       {
+        path: "catalogo",
+        element: <Catalog />,
+      },
+      {
         path: "shop",
-        element: <Shop />,
+        element: <Catalog />,
       },
       {
         path: "shop/:category",
-        element: <Shop />,
-        loader: shopCategoryLoader,
+        element: <Catalog />,
+      },
+      {
+        path: "produto/:id",
+        element: <ProductDetail />,
       },
       {
         path: "product/:id",
-        element: <SingleProduct />,
+        element: <ProductDetail />,
+      },
+      {
+        path: "carrinho",
+        element: <Cart />,
       },
       {
         path: "cart",
         element: <Cart />,
       },
       {
+        path: "favoritos",
+        element: <Wishlist />,
+      },
+      {
         path: "checkout",
         element: <Checkout />,
-        action: checkoutAction,
       },
       {
-        path: "search",
-        action: searchAction,
-        element: <Search />,
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "order-confirmation",
-        element: <OrderConfirmation />,
-      },
-      {
-        path: "user-profile",
-        element: <UserProfile />,
-      },
-      {
-        path: "order-history",
-        element: <OrderHistory />,
-        loader: orderHistoryLoader,
-      },
-      {
-        path: "order-history/:id",
-        element: <SingleOrderHistory />,
-        loader: singleOrderLoader
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

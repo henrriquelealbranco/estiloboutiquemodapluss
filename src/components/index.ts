@@ -20,3 +20,7 @@ export { default as SidebarMenu } from "./SidebarMenu";
 export { default as Dropdown } from "./Dropdown";
 export { default as ScrollToTop } from "./ScrollToTop";
 export { default as ShowingSearchPagination } from "./ShowingSearchPagination";
+export { default as Logo } from "./Logo";
+export { default as AboutSection } from "./AboutSection";
+export { default as InstagramSection } from "./InstagramSection";
+export { default as WhatsAppFloating } from "./WhatsAppFloating";

@@ -1,34 +1,38 @@
-import CategoryItem from "./CategoryItem";
+import React from 'react';
+import CategoryItem from './CategoryItem';
+import { categories } from '../data/products';
 
-const CategoriesSection = () => {
+export const CategoriesSection: React.FC = () => {
   return (
-    <div className="max-w-screen-2xl px-5 mx-auto mt-24">
-      <h2 className="text-black text-5xl font-normal tracking-[1.56px] max-sm:text-4xl mb-12">
-        Our Categories
-      </h2>
-      <div className="flex justify-between flex-wrap gap-y-10">
-        <CategoryItem
-          categoryTitle="Special Edition"
-          image="luxury category 1.png"
-          link="special-edition"
-        />
-        <CategoryItem
-          categoryTitle="Luxury Collection"
-          image="luxury category 2.png"
-          link="luxury-collection"
-        />
-        <CategoryItem
-          categoryTitle="Summer Edition"
-          image="luxury category 3.png"
-          link="summer-edition"
-        />
-        <CategoryItem
-          categoryTitle="Unique Collection"
-          image="luxury category 4.png"
-          link="unique-collection"
-        />
+    <section className="max-w-screen-2xl px-4 sm:px-8 mx-auto mt-20">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+        <div>
+          <span className="text-xs uppercase tracking-widest font-semibold text-[#8B1A4A]">
+            Coleções pensadas para você
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mt-1">
+            Categorias em Destaque
+          </h2>
+        </div>
+        <p className="text-sm text-gray-500 max-w-md">
+          Peças confortáveis do tamanho P ao 56 com cortes modernos e tecidos de toque macio.
+        </p>
       </div>
-    </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categories.map((cat) => (
+          <CategoryItem
+            key={cat.id}
+            id={cat.id}
+            name={cat.name}
+            icon={cat.icon}
+            description={cat.description}
+            image={cat.image}
+          />
+        ))}
+      </div>
+    </section>
   );
 };
+
 export default CategoriesSection;

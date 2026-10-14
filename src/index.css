@@ -2,32 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Merriweather", serif;
+:root {
+  --color-primary: #8B1A4A;
+  --color-primary-light: #A83060;
+  --color-secondary: #F5E6EC;
+  --color-accent: #D4A0B5;
+  --color-text: #2D2D2D;
+  --color-bg: #FAFAFA;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
 }
 
-.banner {
-  height: 800px;
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.15) 100%
-    ),
-    url("/assets/banner1.jpg") lightgray 50% / cover no-repeat;
-  background-position: 10% 25%;
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, .font-heading {
+  font-family: var(--font-heading);
+}
+
+.hero-banner {
+  background: linear-gradient(135deg, rgba(139, 26, 74, 0.92) 0%, rgba(74, 10, 38, 0.95) 100%),
+              url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat;
 }
 
 .shop-banner {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      rgba(0, 0, 0, 0.25) 100%
-    ),
-    url("/assets/shopbanner1.png") lightgray 3.589px 1.817px / 100% 197.462%
-      no-repeat;
+  background: linear-gradient(135deg, rgba(139, 26, 74, 0.88) 0%, rgba(168, 48, 96, 0.85) 100%),
+              url('https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=1600&q=80') center/cover no-repeat;
 }
 
-/* Add these styles to your CSS file */
+/* Sidebar animation classes */
 .sidebar-enter {
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
@@ -41,13 +47,4 @@ body {
 }
 .sidebar-exit-active {
   transform: translateX(-100%);
-}
-
-
-.singleOrder-table td{
-  text-align: left;
-}
-
-.singleOrder-table th{
-  text-align: left;
 }

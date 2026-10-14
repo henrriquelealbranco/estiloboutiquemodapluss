@@ -1,28 +1,36 @@
-import React from "react";
-import ProductItem from "./ProductItem";
-import { nanoid } from "nanoid";
+import React from 'react';
+import ProductItem from './ProductItem';
+import { Product } from '../data/products';
 
-const ProductGrid = ({ products }: { products?: Product[] }) => {
+interface ProductGridProps {
+  products?: Product[];
+}
+
+export const ProductGrid: React.FC<ProductGridProps> = ({ products = [] }) => {
+  if (products.length === 0) {
+    return (
+      <div className="text-center py-16 bg-white rounded-2xl border border-gray-100 p-8 my-6">
+        <p className="text-4xl mb-3">👗</p>
+        <h3 className="font-heading text-xl font-semibold text-gray-800">
+          Nenhum produto encontrado
+        </h3>
+        <p className="text-sm text-gray-500 mt-1 max-w-md mx-auto">
+          Tente ajustar os filtros selecionados ou buscar por outro termo.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div
       id="gridTop"
-      className="max-w-screen-2xl flex flex-wrap justify-between items-center gap-y-8 mx-auto mt-12 max-xl:justify-start max-xl:gap-5 px-5 max-[400px]:px-3"
+      className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-8"
     >
-      {products &&
-        products.map((product: Product) => (
-          <ProductItem
-            key={nanoid()}
-            id={product.id}
-            image={product.image}
-            title={product.title}
-            category={product.category}
-            price={product.price}
-            popularity={product.popularity}
-            stock={product.stock}
-          />
-        ))}
+      {products.map((product) => (
+        <ProductItem key={product.id} product={product} />
+      ))}
     </div>
   );
 };
-// Memoize the component to prevent unnecessary re-renders because of React.cloneElement
+
 export default React.memo(ProductGrid);
