@@ -36,7 +36,7 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
     <div className="fixed inset-0 z-50 overflow-hidden">
       {/* Backdrop */}
       <div
-        className={`fixed inset-0 bg-black/60 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/50 transition-opacity duration-300 ${
           isSidebarOpen ? 'opacity-100' : 'opacity-0'
         }`}
         onClick={() => setIsSidebarOpen(false)}
@@ -84,10 +84,10 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
                 }`
               }
             >
-              Catálogo Geral
+              Catálogo Completo
             </NavLink>
             
-            <div className="pt-2 pb-1 px-3 text-xs uppercase tracking-wider text-gray-400 font-semibold">
+            <div className="pt-3 pb-1 px-3 text-xs uppercase tracking-wider text-gray-400 font-semibold">
               Categorias
             </div>
             <Link
@@ -95,14 +95,14 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
               onClick={() => setIsSidebarOpen(false)}
               className="px-3 py-2 rounded-lg text-gray-600 hover:text-[#8B1A4A] hover:bg-gray-50 flex items-center gap-2"
             >
-              <span>👗</span> Vestidos Plus Size
+              <span>👗</span> Vestidos
             </Link>
             <Link
-              to="/catalogo?categoria=conjuntos"
+              to="/catalogo?categoria=blusas"
               onClick={() => setIsSidebarOpen(false)}
               className="px-3 py-2 rounded-lg text-gray-600 hover:text-[#8B1A4A] hover:bg-gray-50 flex items-center gap-2"
             >
-              <span>✨</span> Conjuntos
+              <span>👚</span> Blusas & Camisas
             </Link>
             <Link
               to="/catalogo?categoria=calcas"
@@ -112,15 +112,15 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
               <span>👖</span> Calças
             </Link>
             <Link
-              to="/catalogo?categoria=blusas"
+              to="/catalogo?categoria=conjuntos"
               onClick={() => setIsSidebarOpen(false)}
               className="px-3 py-2 rounded-lg text-gray-600 hover:text-[#8B1A4A] hover:bg-gray-50 flex items-center gap-2"
             >
-              <span>👚</span> Blusas & Camisas
+              <span>✨</span> Conjuntos
             </Link>
 
             <div className="pt-3 pb-1 px-3 text-xs uppercase tracking-wider text-gray-400 font-semibold">
-              Minha Sacola & Desejos
+              Minhas Escolhas
             </div>
             <Link
               to="/favoritos"
@@ -139,28 +139,20 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
               onClick={() => setIsSidebarOpen(false)}
               className="px-3 py-2 rounded-lg text-gray-700 hover:bg-pink-50 hover:text-[#8B1A4A] flex items-center justify-between"
             >
-              <span>Carrinho de Compras</span>
+              <span>Sacola de Compras</span>
               {cartCount > 0 && (
                 <span className="bg-[#8B1A4A] text-white text-xs px-2 py-0.5 rounded-full font-bold">
                   {cartCount}
                 </span>
               )}
             </Link>
-            <Link
-              to="/checkout"
-              onClick={() => setIsSidebarOpen(false)}
-              className="mt-2 text-center py-2.5 px-4 bg-[#8B1A4A] text-white rounded-lg font-semibold text-sm hover:bg-[#A83060] transition-colors"
-            >
-              Finalizar Pedido (Demo)
-            </Link>
           </nav>
         </div>
 
-        {/* Rodapé da sidebar com informações confirmadas */}
-        <div className="p-4 bg-gray-50 border-t border-gray-100 text-xs text-gray-600 space-y-3">
-          <p className="font-semibold text-gray-800">Estilo Boutique</p>
-          <p>📍 Rua Presidente Getúlio Vargas, 1294 Centro, Guarapuava/PR</p>
-          <p>🚚 Entrega rápida para todo Brasil</p>
+        {/* Rodapé da sidebar com contatos confirmados */}
+        <div className="p-4 bg-gray-50 border-t border-gray-100 text-xs text-gray-600 space-y-2">
+          <p className="font-semibold text-gray-900">Estilo Boutique</p>
+          <p>Rua Presidente Getúlio Vargas, 1294 Centro, Guarapuava/PR</p>
 
           <div className="flex items-center gap-3 pt-2">
             <a
@@ -177,9 +169,9 @@ export const SidebarMenu: React.FC<SidebarMenuProps> = ({
               href="https://www.instagram.com/estiloboutiquemodapluss/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-pink-700 font-medium hover:underline"
+              className="flex items-center gap-1.5 text-[#8B1A4A] font-medium hover:underline"
             >
-              <FaInstagram className="text-base text-pink-600" />
+              <FaInstagram className="text-base text-[#E1306C]" />
               Instagram
             </a>
           </div>

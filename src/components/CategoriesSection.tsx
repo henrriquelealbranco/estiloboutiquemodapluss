@@ -4,22 +4,22 @@ import { categories } from '../data/products';
 
 export const CategoriesSection: React.FC = () => {
   return (
-    <section className="max-w-screen-2xl px-4 sm:px-8 mx-auto mt-20">
-      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+    <section className="max-w-screen-2xl px-4 sm:px-8 mx-auto mt-14 sm:mt-20">
+      <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-2">
         <div>
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8B1A4A]">
-            Coleções pensadas para você
+            Categorias
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mt-1">
-            Categorias em Destaque
+          <h2 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mt-1">
+            Navegue por Categoria
           </h2>
         </div>
-        <p className="text-sm text-gray-500 max-w-md">
-          Peças confortáveis do tamanho P ao 56 com cortes modernos e tecidos de toque macio.
+        <p className="text-xs sm:text-sm text-gray-500">
+          Vestidos, blusas, calças e conjuntos selecionados
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
         {categories.map((cat) => (
           <CategoryItem
             key={cat.id}

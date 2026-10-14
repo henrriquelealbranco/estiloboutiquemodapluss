@@ -4,7 +4,7 @@ import { HiAdjustmentsHorizontal, HiXMark, HiMagnifyingGlass } from 'react-icons
 import { products, categories, Product } from '../data/products';
 import ProductGrid from '../components/ProductGrid';
 
-const ALL_SIZES = ['P', 'M', 'G', 'GG', '44', '46', '48', '50', '52', '54', '56'];
+const ALL_SIZES = ['46', '48', '50', '52', '54', '56'];
 
 export const Catalog: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -91,16 +91,16 @@ export const Catalog: React.FC = () => {
 
   return (
     <div className="max-w-screen-2xl mx-auto px-4 sm:px-8 py-8">
-      {/* Banner de Aviso Demonstrativo */}
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 text-amber-900 rounded-2xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-sm">
+      {/* Banner de Aviso Demonstrativo Discreto */}
+      <div className="bg-[#FAF7F5] border border-gray-200 text-gray-800 rounded-xl p-4 sm:p-5 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div className="flex items-start gap-3">
-          <span className="text-2xl mt-0.5">ℹ️</span>
+          <span className="text-xl mt-0.5">ℹ️</span>
           <div>
-            <h4 className="font-bold text-sm sm:text-base">
-              Catálogo Demonstrativo • Estilo Boutique Guarapuava
+            <h4 className="font-semibold text-xs sm:text-sm text-gray-900">
+              Catálogo Demonstrativo • Moda Feminina & Plus Size
             </h4>
-            <p className="text-xs sm:text-sm text-amber-800 leading-relaxed mt-0.5">
-              Estes 12 produtos são peças demonstrativas de moda feminina e plus size até o 56 para validação visual e técnica. Para comprar peças reais da loja física, fale diretamente no WhatsApp.
+            <p className="text-xs text-gray-500 leading-relaxed mt-0.5">
+              Peças e valores demonstrativos para simulação de navegação e compra. Dúvidas sobre o estoque real da loja podem ser consultadas no WhatsApp.
             </p>
           </div>
         </div>
@@ -109,44 +109,44 @@ export const Catalog: React.FC = () => {
           href="https://wa.me/5542999104224"
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs px-4 py-2.5 rounded-xl transition-colors text-center"
+          className="shrink-0 bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs px-4 py-2 rounded-lg transition-colors text-center"
         >
           WhatsApp da Loja
         </a>
       </div>
 
       {/* Cabeçalho da Página */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
         <div>
           <span className="text-xs uppercase tracking-widest font-semibold text-[#8B1A4A]">
             Moda Feminina & Plus Size
           </span>
-          <h1 className="text-3xl sm:text-4xl font-heading font-bold text-gray-900 mt-1">
-            Catálogo de Peças
+          <h1 className="text-2xl sm:text-3xl font-heading font-bold text-gray-900 mt-0.5">
+            Catálogo Geral
           </h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Exibindo {filteredProducts.length} de {products.length} peças disponíveis
+          <p className="text-xs sm:text-sm text-gray-500 mt-0.5">
+            Mostrando {filteredProducts.length} de {products.length} peças
           </p>
         </div>
 
         {/* Busca rápida e ordenação */}
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2.5">
           <div className="relative flex-grow sm:flex-grow-0 sm:w-64">
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar por nome ou cor..."
-              className="w-full pl-9 pr-4 py-2 text-sm bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8B1A4A] focus:border-transparent"
+              className="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-white border border-gray-300 rounded-lg focus:ring-1 focus:ring-[#8B1A4A] focus:border-[#8B1A4A]"
             />
-            <HiMagnifyingGlass className="absolute left-3 top-2.5 text-gray-400 text-lg" />
+            <HiMagnifyingGlass className="absolute left-3 top-2.5 text-gray-400 text-base" />
             {searchQuery && (
               <button
                 type="button"
                 onClick={() => setSearchQuery('')}
                 className="absolute right-2.5 top-2.5 text-gray-400 hover:text-gray-600"
               >
-                <HiXMark className="text-base" />
+                <HiXMark className="text-sm" />
               </button>
             )}
           </div>
@@ -154,10 +154,10 @@ export const Catalog: React.FC = () => {
           <select
             value={sortOption}
             onChange={(e) => setSortOption(e.target.value)}
-            className="py-2 px-3 text-sm bg-white border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#8B1A4A]"
+            className="py-2 px-3 text-xs sm:text-sm bg-white border border-gray-300 rounded-lg focus:ring-1 focus:ring-[#8B1A4A]"
           >
             <option value="default">Ordenar: Padrão</option>
-            <option value="featured">Destaques Primeiro</option>
+            <option value="featured">Destaques</option>
             <option value="price-asc">Menor Preço</option>
             <option value="price-desc">Maior Preço</option>
           </select>
@@ -166,12 +166,12 @@ export const Catalog: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsMobileFiltersOpen(true)}
-            className="lg:hidden flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3.5 rounded-xl text-sm font-medium transition-colors"
+            className="lg:hidden flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 py-2 px-3 rounded-lg text-xs font-medium transition-colors"
           >
-            <HiAdjustmentsHorizontal className="text-lg" />
+            <HiAdjustmentsHorizontal className="text-base" />
             <span>Filtros</span>
             {activeFiltersCount > 0 && (
-              <span className="bg-[#8B1A4A] text-white text-xs px-1.5 py-0.2 rounded-full font-bold">
+              <span className="bg-[#8B1A4A] text-white text-[10px] px-1.5 py-0.2 rounded-full font-bold">
                 {activeFiltersCount}
               </span>
             )}
@@ -182,9 +182,9 @@ export const Catalog: React.FC = () => {
       {/* Layout com Sidebar e Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
         {/* Sidebar Desktop */}
-        <aside className="hidden lg:block bg-white p-6 rounded-2xl border border-gray-100 shadow-sm space-y-6 sticky top-24">
-          <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-            <h3 className="font-heading font-bold text-gray-900 text-lg flex items-center gap-2">
+        <aside className="hidden lg:block bg-white p-5 rounded-xl border border-gray-200 space-y-5 sticky top-24">
+          <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+            <h3 className="font-heading font-bold text-gray-900 text-base flex items-center gap-1.5">
               <HiAdjustmentsHorizontal className="text-[#8B1A4A]" />
               Filtros
             </h3>
@@ -192,29 +192,29 @@ export const Catalog: React.FC = () => {
               <button
                 type="button"
                 onClick={clearAllFilters}
-                className="text-xs text-[#8B1A4A] hover:underline font-semibold"
+                className="text-xs text-[#8B1A4A] hover:underline font-medium"
               >
-                Limpar todos
+                Limpar filtros
               </button>
             )}
           </div>
 
           {/* Filtro por Categoria */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-gray-400 mb-3">
+            <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-2.5">
               Categorias
             </h4>
-            <div className="space-y-1.5">
+            <div className="space-y-1">
               <button
                 type="button"
                 onClick={() => handleCategoryChange('')}
-                className={`w-full text-left px-3 py-2 rounded-xl text-sm transition-colors flex items-center justify-between ${
+                className={`w-full text-left px-3 py-1.5 rounded-lg text-xs sm:text-sm transition-colors flex items-center justify-between ${
                   selectedCategory === ''
-                    ? 'bg-[#F5E6EC] text-[#8B1A4A] font-semibold'
+                    ? 'bg-[#FAF7F5] text-[#8B1A4A] font-semibold border-l-2 border-[#8B1A4A]'
                     : 'text-gray-700 hover:bg-gray-50'
                 }`}
               >
-                <span>Todas as Categorias</span>
+                <span>Todas</span>
                 <span className="text-xs text-gray-400">{products.length}</span>
               </button>
               {categories.map((cat) => {
@@ -224,16 +224,13 @@ export const Catalog: React.FC = () => {
                     key={cat.id}
                     type="button"
                     onClick={() => handleCategoryChange(cat.id)}
-                    className={`w-full text-left px-3 py-2 rounded-xl text-sm transition-colors flex items-center justify-between ${
+                    className={`w-full text-left px-3 py-1.5 rounded-lg text-xs sm:text-sm transition-colors flex items-center justify-between ${
                       selectedCategory === cat.id
-                        ? 'bg-[#F5E6EC] text-[#8B1A4A] font-semibold'
+                        ? 'bg-[#FAF7F5] text-[#8B1A4A] font-semibold border-l-2 border-[#8B1A4A]'
                         : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   >
-                    <span className="flex items-center gap-2">
-                      <span>{cat.icon}</span>
-                      <span>{cat.name}</span>
-                    </span>
+                    <span>{cat.name}</span>
                     <span className="text-xs text-gray-400">{count}</span>
                   </button>
                 );
@@ -243,8 +240,8 @@ export const Catalog: React.FC = () => {
 
           {/* Filtro por Tamanho */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-bold text-gray-400 mb-3">
-              Tamanhos (P ao 56)
+            <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-2.5">
+              Tamanhos Cadastrados
             </h4>
             <div className="flex flex-wrap gap-1.5">
               {ALL_SIZES.map((size) => {
@@ -254,10 +251,10 @@ export const Catalog: React.FC = () => {
                     key={size}
                     type="button"
                     onClick={() => handleSizeToggle(size)}
-                    className={`min-w-10 px-2.5 py-1.5 text-xs font-semibold rounded-lg border transition-all ${
+                    className={`min-w-9 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all ${
                       isSelected
-                        ? 'bg-[#8B1A4A] text-white border-[#8B1A4A] shadow-sm'
-                        : 'bg-white text-gray-700 border-gray-200 hover:border-[#8B1A4A]'
+                        ? 'bg-[#8B1A4A] text-white border-[#8B1A4A]'
+                        : 'bg-white text-gray-700 border-gray-300 hover:border-gray-400'
                     }`}
                   >
                     {size}
@@ -266,28 +263,20 @@ export const Catalog: React.FC = () => {
               })}
             </div>
           </div>
-
-          {/* Info Card na Sidebar */}
-          <div className="bg-[#FAFAFA] p-4 rounded-xl border border-gray-100 text-xs text-gray-600 space-y-2">
-            <p className="font-semibold text-gray-800">Dúvidas sobre tamanhos?</p>
-            <p>
-              Consulte a guia de medidas na página de cada produto ou chame nossa equipe no WhatsApp para consultoria imediata.
-            </p>
-          </div>
         </aside>
 
         {/* Modal de Filtros Mobile */}
         {isMobileFiltersOpen && (
           <div className="fixed inset-0 z-50 lg:hidden flex">
             <div
-              className="fixed inset-0 bg-black/60"
+              className="fixed inset-0 bg-black/50"
               onClick={() => setIsMobileFiltersOpen(false)}
             />
             <div className="relative ml-auto w-full max-w-xs bg-white h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
               <div className="space-y-6">
-                <div className="flex items-center justify-between pb-4 border-b border-gray-100">
-                  <h3 className="font-heading font-bold text-gray-900 text-lg">
-                    Filtros
+                <div className="flex items-center justify-between pb-3 border-b border-gray-100">
+                  <h3 className="font-heading font-bold text-gray-900 text-base">
+                    Filtrar Catálogo
                   </h3>
                   <button
                     type="button"
@@ -300,34 +289,36 @@ export const Catalog: React.FC = () => {
 
                 {/* Categorias Mobile */}
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">
+                  <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-2">
                     Categorias
                   </h4>
                   <div className="space-y-1">
                     <button
                       type="button"
                       onClick={() => handleCategoryChange('')}
-                      className={`w-full text-left px-3 py-2 rounded-xl text-sm ${
+                      className={`w-full text-left px-3 py-2 rounded-lg text-xs ${
                         selectedCategory === ''
-                          ? 'bg-[#F5E6EC] text-[#8B1A4A] font-bold'
+                          ? 'bg-[#FAF7F5] text-[#8B1A4A] font-bold'
                           : 'text-gray-700'
                       }`}
                     >
-                      Todas as Categorias
+                      Todas as Peças
                     </button>
                     {categories.map((cat) => (
                       <button
                         key={cat.id}
                         type="button"
                         onClick={() => handleCategoryChange(cat.id)}
-                        className={`w-full text-left px-3 py-2 rounded-xl text-sm flex items-center gap-2 ${
+                        className={`w-full text-left px-3 py-2 rounded-lg text-xs flex items-center justify-between ${
                           selectedCategory === cat.id
-                            ? 'bg-[#F5E6EC] text-[#8B1A4A] font-bold'
+                            ? 'bg-[#FAF7F5] text-[#8B1A4A] font-bold'
                             : 'text-gray-700'
                         }`}
                       >
-                        <span>{cat.icon}</span>
                         <span>{cat.name}</span>
+                        <span className="text-[11px] text-gray-400">
+                          {products.filter((p) => p.category === cat.id).length}
+                        </span>
                       </button>
                     ))}
                   </div>
@@ -335,8 +326,8 @@ export const Catalog: React.FC = () => {
 
                 {/* Tamanhos Mobile */}
                 <div>
-                  <h4 className="text-xs uppercase tracking-wider font-bold text-gray-400 mb-2">
-                    Tamanhos (P ao 56)
+                  <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-400 mb-2">
+                    Tamanhos
                   </h4>
                   <div className="flex flex-wrap gap-1.5">
                     {ALL_SIZES.map((size) => {
@@ -346,10 +337,10 @@ export const Catalog: React.FC = () => {
                           key={size}
                           type="button"
                           onClick={() => handleSizeToggle(size)}
-                          className={`min-w-10 px-2.5 py-1.5 text-xs font-semibold rounded-lg border ${
+                          className={`min-w-9 px-2.5 py-1 text-xs font-semibold rounded-lg border ${
                             isSelected
                               ? 'bg-[#8B1A4A] text-white border-[#8B1A4A]'
-                              : 'bg-white text-gray-700 border-gray-200'
+                              : 'bg-white text-gray-700 border-gray-300'
                           }`}
                         >
                           {size}
@@ -360,20 +351,20 @@ export const Catalog: React.FC = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-gray-100 flex gap-2">
+              <div className="pt-4 border-t border-gray-100 flex gap-2">
                 <button
                   type="button"
                   onClick={clearAllFilters}
-                  className="flex-1 py-2.5 border border-gray-300 text-gray-700 font-semibold rounded-xl text-xs"
+                  className="flex-1 py-2 border border-gray-300 text-gray-700 font-medium rounded-lg text-xs"
                 >
                   Limpar
                 </button>
                 <button
                   type="button"
                   onClick={() => setIsMobileFiltersOpen(false)}
-                  className="flex-1 py-2.5 bg-[#8B1A4A] text-white font-semibold rounded-xl text-xs"
+                  className="flex-1 py-2 bg-[#8B1A4A] text-white font-medium rounded-lg text-xs"
                 >
-                  Ver Resultados
+                  Ver Peças
                 </button>
               </div>
             </div>
@@ -384,10 +375,10 @@ export const Catalog: React.FC = () => {
         <div className="lg:col-span-3">
           {/* Tags de filtros ativos */}
           {activeFiltersCount > 0 && (
-            <div className="flex flex-wrap items-center gap-2 mb-4">
-              <span className="text-xs text-gray-500 font-medium">Filtros aplicados:</span>
+            <div className="flex flex-wrap items-center gap-1.5 mb-3">
+              <span className="text-xs text-gray-500">Filtros:</span>
               {selectedCategory && (
-                <span className="inline-flex items-center gap-1 bg-[#F5E6EC] text-[#8B1A4A] text-xs font-semibold px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-[#FAF7F5] text-[#8B1A4A] text-xs font-medium px-2 py-0.5 rounded border border-gray-200">
                   {categories.find((c) => c.id === selectedCategory)?.name || selectedCategory}
                   <button type="button" onClick={() => handleCategoryChange('')}>
                     <HiXMark className="text-sm" />
@@ -397,7 +388,7 @@ export const Catalog: React.FC = () => {
               {selectedSizes.map((size) => (
                 <span
                   key={size}
-                  className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded-full"
+                  className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-medium px-2 py-0.5 rounded"
                 >
                   Tam: {size}
                   <button type="button" onClick={() => handleSizeToggle(size)}>
@@ -406,7 +397,7 @@ export const Catalog: React.FC = () => {
                 </span>
               ))}
               {searchQuery && (
-                <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-medium px-2 py-0.5 rounded">
                   &ldquo;{searchQuery}&rdquo;
                   <button type="button" onClick={() => setSearchQuery('')}>
                     <HiXMark className="text-sm" />
@@ -416,9 +407,9 @@ export const Catalog: React.FC = () => {
               <button
                 type="button"
                 onClick={clearAllFilters}
-                className="text-xs text-[#8B1A4A] hover:underline font-semibold ml-2"
+                className="text-xs text-[#8B1A4A] hover:underline font-medium ml-1"
               >
-                Remover todos
+                Limpar todos
               </button>
             </div>
           )}

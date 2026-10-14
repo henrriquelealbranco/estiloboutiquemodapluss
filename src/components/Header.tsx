@@ -13,18 +13,24 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      {/* Barra superior de informações e aviso demonstrativo */}
-      <div className="bg-[#8B1A4A] text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide">
-        <div className="max-w-screen-2xl mx-auto flex flex-wrap items-center justify-between gap-2 px-2">
-          <span className="hidden sm:inline">📍 Rua Presidente Getúlio Vargas, 1294 Centro - Guarapuava/PR</span>
-          <span className="mx-auto sm:mx-0 font-semibold">✨ Moda Feminina & Plus Size até o 56 | Entrega para todo o Brasil 🚚</span>
-          <span className="hidden md:inline bg-[#A83060] px-2 py-0.5 rounded text-[11px] uppercase tracking-wider font-bold">Demo Interativa</span>
+      {/* Barra superior discreta */}
+      <div className="bg-[#8B1A4A] text-white text-xs py-2 px-4">
+        <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
+          <span className="hidden sm:inline text-pink-100">
+            Rua Presidente Getúlio Vargas, 1294 • Centro, Guarapuava - PR
+          </span>
+          <span className="mx-auto sm:mx-0 font-medium">
+            Moda Feminina & Plus Size • Demonstração da Loja Virtual
+          </span>
+          <span className="hidden md:inline text-pink-200 text-[11px]">
+            Atendimento: (42) 99910-4224
+          </span>
         </div>
       </div>
 
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all duration-300">
+      <header className="sticky top-0 z-40 bg-[#FAFAFA]/95 backdrop-blur-md border-b border-gray-200 transition-all duration-300">
         <div className="max-w-screen-2xl flex items-center justify-between py-3.5 px-4 sm:px-8 mx-auto">
-          {/* Mobile hamburger + Logo */}
+          {/* Mobile hamburger + Logo da Marca */}
           <div className="flex items-center gap-3">
             <button
               type="button"
@@ -37,7 +43,7 @@ export const Header: React.FC = () => {
             <Logo size="md" />
           </div>
 
-          {/* Navegação Desktop */}
+          {/* Navegação Desktop com respiro e foco na marca */}
           <nav className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-gray-700">
             <NavLink
               to="/"
@@ -57,7 +63,7 @@ export const Header: React.FC = () => {
                 }`
               }
             >
-              Catálogo Completo
+              Catálogo
             </NavLink>
             <NavLink
               to="/catalogo?categoria=vestidos"
@@ -66,10 +72,10 @@ export const Header: React.FC = () => {
               Vestidos
             </NavLink>
             <NavLink
-              to="/catalogo?categoria=conjuntos"
+              to="/catalogo?categoria=blusas"
               className="hover:text-[#8B1A4A] transition-colors duration-200"
             >
-              Conjuntos
+              Blusas
             </NavLink>
             <NavLink
               to="/catalogo?categoria=calcas"
@@ -78,24 +84,24 @@ export const Header: React.FC = () => {
               Calças
             </NavLink>
             <NavLink
-              to="/catalogo?categoria=blusas"
+              to="/catalogo?categoria=conjuntos"
               className="hover:text-[#8B1A4A] transition-colors duration-200"
             >
-              Blusas
+              Conjuntos
             </NavLink>
           </nav>
 
-          {/* Ações: Favoritos e Carrinho */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          {/* Ações: Favoritos e Sacola (sem o botão "Finalizar Demonstração") */}
+          <div className="flex items-center gap-2 sm:gap-3">
             <Link
               to="/favoritos"
               aria-label="Ver produtos favoritos"
-              className="relative p-2 text-gray-700 hover:text-[#8B1A4A] transition-colors rounded-full hover:bg-pink-50"
+              className="relative p-2.5 text-gray-700 hover:text-[#8B1A4A] transition-colors rounded-full hover:bg-gray-100"
               title="Favoritos"
             >
               <HiOutlineHeart className="text-2xl" />
               {wishlistCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#8B1A4A] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-fade-in shadow-sm">
+                <span className="absolute 0 top-1 right-1 bg-[#8B1A4A] text-white text-[11px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
                   {wishlistCount}
                 </span>
               )}
@@ -103,23 +109,16 @@ export const Header: React.FC = () => {
 
             <Link
               to="/carrinho"
-              aria-label="Ver carrinho de compras"
-              className="relative p-2 text-gray-700 hover:text-[#8B1A4A] transition-colors rounded-full hover:bg-pink-50"
+              aria-label="Ver sacola de compras"
+              className="relative p-2.5 text-gray-700 hover:text-[#8B1A4A] transition-colors rounded-full hover:bg-gray-100"
               title="Sacola de Compras"
             >
               <HiOutlineShoppingBag className="text-2xl" />
               {cartCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-[#8B1A4A] text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center animate-fade-in shadow-sm">
+                <span className="absolute top-1 right-1 bg-[#8B1A4A] text-white text-[11px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">
                   {cartCount}
                 </span>
               )}
-            </Link>
-
-            <Link
-              to="/checkout"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white bg-[#8B1A4A] hover:bg-[#A83060] rounded-md transition-all shadow-sm"
-            >
-              Finalizar Demonstração
             </Link>
           </div>
         </div>
