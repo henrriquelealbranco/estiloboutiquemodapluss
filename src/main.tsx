@@ -4,19 +4,12 @@ import App from "./App.tsx";
 import "./index.css";
 import { store } from "./store.ts";
 import { Provider } from "react-redux";
-import { Toaster } from "react-hot-toast";
-import { CartProvider } from "./context/CartContext.tsx";
-import { WishlistProvider } from "./context/WishlistContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <CartProvider>
-        <WishlistProvider>
-          <Toaster position="top-right" />
-          <App />
-        </WishlistProvider>
-      </CartProvider>
+      <App />
     </Provider>
   </React.StrictMode>
 );
+

@@ -9,6 +9,9 @@ import {
   Wishlist,
   NotFound,
 } from "./pages";
+import { CartProvider } from "./context/CartContext.tsx";
+import { WishlistProvider } from "./context/WishlistContext.tsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +67,14 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <WishlistProvider>
+        <Toaster position="top-right" />
+        <RouterProvider router={router} />
+      </WishlistProvider>
+    </CartProvider>
+  );
 }
 
 export default App;
